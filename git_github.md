@@ -122,6 +122,7 @@ git reset --ESCOLHA HASH # Retorna para um determinado commit
 	--hard  # # volta para o commit desejado mas exclui os arquivos que não estavam no commit
 git reset NOME-ARQUIVO  # tira o arquivo do git add
 git restore --staged NOME-ARQUIVO # tira o arquivo do git add
+git revert "commit" # reverte o que tinha feito no commit escolhido
 ```
 
 ### Enviando e baixando alterações com o Repositório Remoto
@@ -161,6 +162,9 @@ git stash list # lista arquivos arquivados
 git stash pop # tras o ultimo arquivo arquivado e exclui da pilha
 git stash apply # tras o ultimo arquivo arquivado e mantem na pilha
 ```
+
+### .gitignore
+- O .gitignore serve para ignonorar certas pastas e arquivos que voce não queira que o git rastreie.
 
 ## Padronização de Commit
 
