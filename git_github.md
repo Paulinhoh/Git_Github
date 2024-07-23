@@ -1,4 +1,4 @@
-# Git e Github - Studies
+# Git e GitHub - Studies
 
 ## O que é versionamento de Código
 
