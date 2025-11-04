@@ -1,5 +1,6 @@
 # Git e GitHub - Studies
 
+
 ## O que é versionamento de Código
 
 É um sistema de controle de versão, que controla as versões de um arquivo ao longo do tempo.
@@ -7,6 +8,7 @@
 - Registra o histórico de atualização de um arquivo;
 - Gerencia quais foram as alterações, a data, o autor, etc...
 - Organização, controle e segurança.
+
 
 ## Tipos de Sistemas de Controle de Versão
 
@@ -30,6 +32,7 @@ Clona o repositório completo, o que inclui o histórico de versões.
 - Possibilita um fluxo de trabalho flexível
 - Possibilidade de trabalhar sem conexão á rede
 
+
 ## O que é Git
 
 Sistema de Controle de Versão Distribuído
@@ -46,6 +49,7 @@ Sistema de Controle de Versão Distribuído
 
 2005 → Após alguns conflitos com a comunidade, o BitKeeper rescinde a licença gratuita. O que leva a Linux Torvalds, o criador do Linux, e sua equipe a desenvolverem sua própria ferramenta, o Git.
 
+
 ## O que é GitHub
 
 Plataforma de hospedagem de código para controle de versão com Git, e colaboração.
@@ -61,6 +65,7 @@ Plataforma de hospedagem de código para controle de versão com Git, e colabora
 2008 → Desenvolvido por Chris Wanstrath, J. Hyett, Tom Preston-Werner e Scott Chacon.
 
 2018 → Vitima de um dos maiores ataques de DDoS ( ataque distribuído de negação de serviço ); Comprado pela Microsoft Corporation por US $ 7,5 bilhões.
+
 
 ## Configuraçãos e Autenticação Git
 
@@ -86,6 +91,7 @@ git config --global credential.helper store # para para sempre na maquina
 git clone URL
 # ira pedir o usuario do github e a senha que no lugar coloca o token
 ```
+
 
 ## Comandos Git
 
@@ -166,6 +172,7 @@ git stash apply # tras o ultimo arquivo arquivado e mantem na pilha
 ### .gitignore
 - O .gitignore serve para ignonorar certas pastas e arquivos que voce não queira que o git rastreie.
 
+
 ## Padronização de Commit
 
 | Tipo de Commit | Descrição                                                             |
@@ -176,3 +183,38 @@ git stash apply # tras o ultimo arquivo arquivado e mantem na pilha
 | style          | Realiza mudanças na aparência, sem alterar a funcionalidade.          |
 | refactor       | Realiza mudanças no código que não alteram a funcionalidade.          |
 | test           | Adiciona ou modifica testes no projeto.                               |
+
+
+## Github CLI
+<b>Passo 1: Instalando o GitHub CLI</b><br>
+O GitHub CLI é uma ferramenta que permite interagir com o GitHub diretamente do terminal. Para instalar o GitHub CLI, você pode seguir as instruções na página oficial do GitHub CLI.<br><br>
+
+<b>Passo 2: Fazendo Login na Sua Conta do GitHub</b>
+```bash
+gh auth login
+```
+Siga as instruções na tela para concluir o processo de login. Logo veja uma descrição de cada etapa.
+1. O GitHub CLI perguntará “Qual conta você gostaria de fazer login?”. Você terá duas opções: GitHub.com ou GitHub Enterprise Server. Na maioria dos casos, você vai querer selecionar GitHub.com.
+2. O GitHub CLI perguntará “Como você gostaria de se autenticar?”. Você terá duas opções: Login com um navegador da web ou Colar um token de autenticação.
+3. Se você escolher “Login com um navegador da web”, o GitHub CLI fornecerá um código de um único uso e abrirá uma janela do navegador para você concluir o login. Você precisará copiar o código, colá-lo na janela do navegador e seguir as instruções na tela para fazer login.
+4. Se você escolher “Colar um token de autenticação”, você precisará gerar um token de acesso pessoal no GitHub e colá-lo no terminal.
+5. Depois de concluir essas etapas, você estará autenticado no GitHub CLI e pronto para começar a usar os comandos do GitHub.<br><br>
+
+<b>Passo 3: Criando um Novo Repositório no GitHub</b><br>
+Agora que você está logado na sua conta do GitHub, pode criar um novo repositório. Para fazer isso, use o seguinte comando:
+```bash
+gh repo create <nome_do_repositorio>
+```
+* Substitua <nome_do_repositorio> pelo nome que você deseja dar ao seu repositório.<br>
+Durante a criação do repositório, o GitHub CLI perguntará se você deseja adicionar um arquivo README, .gitignore ou licença. Você pode selecionar as opções de acordo com suas necessidades.<br><br>
+
+<b>Passo 4: Enviando Seus Arquivos para o Repositório Remoto</b><br>
+Por fim, você pode enviar seus arquivos para o repositório remoto. Para fazer isso, use os seguintes comandos:
+```bash
+git add .
+git commit -m "primeiro commit"
+git push -u origin main
+```
+* Esses comandos adicionam todos os arquivos do seu repositório local para a área de preparação, fazem um commit com a mensagem “primeiro commit” e enviam os arquivos para a branch main do seu repositório remoto.
+* Lembre-se de substituir main pelo nome da branch que você deseja enviar, se não for main.
+* Espero que este artigo tenha sido útil para você.
