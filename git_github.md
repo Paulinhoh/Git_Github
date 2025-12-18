@@ -158,6 +158,7 @@ git branch -d NOME-BRANCH # exclui a branch
 
 ```bash
 git fetch origin main # baixa os arquivos do github mais não mescla
+git fetch # traz todas as branchs do repositorio
 git diff BRANCH1 BRANCH2 # mostra as diferenças entre as branchs
 git merge origin/main
 ----------------------------------------------------------------------------------------------
@@ -175,14 +176,19 @@ git stash apply # tras o ultimo arquivo arquivado e mantem na pilha
 
 ## Padronização de Commit
 
-| Tipo de Commit | Descrição                                                             |
-| -------------- | --------------------------------------------------------------------- |
-| feat           | Adiciona uma nova funcionalidade ao projeto.                          |
-| fix            | Corrige um bug ou problema no projeto.                                |
-| docs           | Altera a documentação do projeto. Ex.: README, comentários no código. |
-| style          | Realiza mudanças na aparência, sem alterar a funcionalidade.          |
-| refactor       | Realiza mudanças no código que não alteram a funcionalidade.          |
-| test           | Adiciona ou modifica testes no projeto.                               |
+| Tipo de Commit | Descrição                                                                                                   |
+| -------------- | ----------------------------------------------------------------------------------------------------------- |
+| feat           | Adiciona uma nova funcionalidade ao projeto.                                                                |
+| fix            | Corrige um bug ou problema no projeto.                                                                      |
+| docs           | Altera a documentação do projeto. Ex.: README, comentários no código.                                       |
+| style          | Realiza mudanças na aparência, sem alterar a funcionalidade.                                                |
+| refactor       | Realiza mudanças no código que não alteram a funcionalidade.                                                |
+| test           | Adiciona ou modifica testes no projeto.                                                                     |
+| chore          | Indica mudanças no projeto que não afetem o sistema ou arquivos de testes. São mudanças de desenvolvimento. |
+| build          | Utilizada para indicar mudanças que afetam o processo de build do projeto ou dependências externas.         |
+| perf           | Indica uma alteração que melhorou a performance do sistema.                                                 |
+| ci             | Utilizada para mudanças nos arquivos de configuração de CI.                                                 |
+| revert         | Indica a reverão de um commit anterior.                                                                     |
 
 
 ## Github CLI
@@ -218,3 +224,25 @@ git push -u origin main
 * Esses comandos adicionam todos os arquivos do seu repositório local para a área de preparação, fazem um commit com a mensagem “primeiro commit” e enviam os arquivos para a branch main do seu repositório remoto.
 * Lembre-se de substituir main pelo nome da branch que você deseja enviar, se não for main.
 * Espero que este artigo tenha sido útil para você.
+
+## Git Flow
+### Regras basicas:
+1. Minúsculas e separadas por hífen: Mantenha-se nas minúsculas para nomes de ramos e use hífens para separar palavras. Por exemplo, ou. `feature/new-loginbugfix/header-styling`
+2. Caracteres Alfanuméricos: Use apenas caracteres alfanuméricos (a-z, A-Z, 0–9) e hífens. Evite pontuação, espaços, sublinhados ou qualquer caractere não alfanumérico.
+3. Sem hífens contínuos: Não use hífens contínuos. pode ser confuso e difícil de ler. `feature--new-login`
+4. Sem hífens de final: Não termine o nome da sua filial com um hífen. Por exemplo, não é uma boa prática. `feature-new-login-`
+5. Descritivo: O nome deve ser descritivo e conciso, idealmente refletindo o trabalho realizado no ramo.
+
+### Nomeclatura:
+| Tipo de Branchs | Descrição                                                                                                                |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| main            | Branch principal, geralmente só é mandado novas realeses para ela.                                                       |
+| develop         | Branch de desenvolvimento.                                                                                               |
+| feature         | Usado para desenvolver novas funcionalidades que serão integradas em um futuro release.                                  |
+| hotfix          | Criado para corrigir problemas críticos que foram identificados em produção.                                             |
+| bugfix          | Usado para corrigir bugs detectados no ambiente de desenvolvimento ou QA (Controle de Qualidade).                        |
+| task            | Usado para pequenas melhorias ou ajustes que não são novas funcionalidades completas, nem correções de bugs críticos.    |
+| chore           | Usado para tarefas de manutenção como refatoração de código, atualizações de dependências, ou melhorias de configuração. |
+| release         | Criado para preparar uma nova versão do software que será lançada. Serve como uma zona de testes final.                  |
+| epic            | Utilizado para desenvolvimento de grandes funcionalidades ou projetos que abrangem várias features ou tarefas menores.   |
+| improvement     | Focado em melhorias de funcionalidades já existentes.                                                                    |
